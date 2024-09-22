@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulaire de connexion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="container">
+    <h1>se connecter</h1>
+    <form>
+        <div class="boxput">
+            <input type="email" id="email" name="email" placeholder="username">
+        </div>
+        <div class="boxput">
+            <input type="password" id="pswr" name="pswr" placeholder="password">
+        </div>
+         <input type="submit" value="login">
+         <p class="text" style="text-align: center;"></p>
+    </form>
+   </div>
+   <script>
+    document.querySelector("form").addEventListener("submit",function(e){
+        e.preventDefault();
+        const password=document.getElementById("pswr").value;
+        const email=document.getElementById("email").value;
+        const text=document.querySelector(".text")
+
+        if(email && password){
+            text.textContent="vous etes connecter ";
+            this.reset();
+        }else{
+            text.textContent="veuillez remplir les champs";
+        }
+    })
+   </script>
+</body>
+</html>
